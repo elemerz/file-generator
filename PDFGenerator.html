@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<title>File Generator</title>
+</head>
+<body id="PDFGenerator">
+	<h1>Genarate file</h1>
+    <label for="fileType">File Type:</label><select id="fileType"></select>
+    <label for="fileSize">Size:</label><input id="fileSize" type="number" step="1" tabindex= "1" class="mask-pnum-up-down" value="1024" autofocus/>
+	<span class="unit-container">
+        <input type="radio" name="unit" multiplier="1" id="rdbB" minsize="183" maxsize="1048576000" checked/><label for="rdbB" tabindex= "2">B</label>
+        <input type="radio" name="unit" multiplier="1024" id="rdbK" minsize="0.178711" maxsize="102400"/><label for="rdbK" tabindex= "3">K</label>
+        <input type="radio" name="unit" multiplier="1048576" id="rdbM" minsize="0.000174523" maxsize="100"/><label for="rdbM" tabindex= "4">M</label>
+    </span>
+	<button type="button" id="btnGenerate" tabindex= "5">Generate</button>
+
+    <!--JavaScripts-->
+    <script language="JavaScript" src="js/jquery-3.3.1.min.js"></script>
+    <script language="JavaScript" src="js/PDFGenerator.js"></script>
+</body>
+</html>

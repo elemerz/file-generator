@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input, select, button, label {
+    padding: .5em;
+}
+.unit-container {
+    font-size: 0;
+}
+
+.unit-container > label {
+    font-size: 16px;
+}
+
+input[name="unit"] {
+    display: none;
+}
+
+input[name="unit"] + label {
+    display: inline-block;
+    border: 1px solid #888;
+    box-shadow: inset 0 -2px 3px rgba(0, 0, 0, .5);
+    background: #fcfcfc linear-gradient(to bottom, white 3px, #fcfcfc 6px);
+}
+
+input[name="unit"]:checked + label {
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, .5);
+    background: #fcfcfc linear-gradient(to top, white 3px, #fcfcfc 6px);
+}
+
+input[name="unit"] + label:first-of-type {
+    border-radius: 6px 0 0 6px;
+}
+
+input[name="unit"] + label:last-of-type {
+    border-radius: 0 6px 6px 0;
+}
+
+#btnGenerate {
+    margin-left:.5em;
+}
