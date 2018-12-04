@@ -21,8 +21,7 @@
       genLen = Math.max(minSizeBytes, Number(document.getElementById("fileSize").value) * Number($('[name="unit"]:checked').attr("multiplier"))) - minSizeBytes,
       urlCreator = window.URL || window.webkitURL,
       fileName="",
-      blob=null,
-      a = document.createElement('a');
+      blob=null;
 
     for(var i = 1; i <= genLen;i++){
       fileInfix[fileInfix.length] = Number.random(63,127);
@@ -30,9 +29,7 @@
     allBytes=new Uint8Array(filePrefix.concat(fileInfix).concat(fileSuffix));
     fileName = prompt("Please enter File name", $("#fileSize").val() + $('input[name="unit"]:checked+label').text() + "." + $fileType.val());
     blob = new Blob([allBytes], {type: "octet/stream"});
-    a.href = urlCreator.createObjectURL(blob);
-    a.download = fileName;
-    a.click();
+    $("<a/>",{href: urlCreator.createObjectURL(blob), download: fileName})[0].click();
 	}
 
   /**User Types in fileSize field*/
